@@ -1,0 +1,2 @@
+class ProductsVote < ApplicationRecord
+end
