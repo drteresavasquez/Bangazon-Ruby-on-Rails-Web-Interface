@@ -1,0 +1,2 @@
+module ProductsVotesHelper
+end
