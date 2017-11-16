@@ -47,7 +47,7 @@ namespace :db do
       Product.create!(
         seller_id: Faker::Number.between(1, 50),
         price: Faker::Number.decimal(2),
-        category_id: Faker::Number.between(1, 4),
+        category_id: Faker::Number.between(1, 5),
         local: Faker::Boolean.boolean,
         exp_date: Faker::Date.forward(60),
         # description: Faker::Movie.quote,
