@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  root 'static_pages#home'
+  get  '/help',    to: 'static_pages#help'
+  get  '/about',   to: 'static_pages#about'
+  get  '/contact', to: 'static_pages#contact'
+
+
   resources :images
   resources :wish_lists
   resources :orders
@@ -8,5 +14,5 @@ Rails.application.routes.draw do
   resources :categories
   resources :users
   resources :products
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
 end
