@@ -1,0 +1,26 @@
+<%= form_for(@product) do |f| %>
+    <%= render 'shared/error_messages', object: @product %>
+
+    <%= f.label :product_name %>
+    <%= f.text_field :product_name, class: 'form-control' %>
+
+    <%= f.label :description %>
+    <%= f.text_field :description, class: 'form-control' %>
+
+    <%= f.label :quantity %>
+    <%= f.number_field :quantity, class: 'form-control' %>
+
+    <%= f.label :price %>
+    <%= f.number_field :price, class: 'form-control' %>
+
+    <%= f.label :exp_date %>
+    <%= f.date_select :exp_date, class: 'form-control' %>
+
+    <%= f.label :category_id %>
+    <%= f.radio_button :category_id, class: 'form-control' %>
+
+    <%= f.label :local %>
+    <%= f.radio_button :local, class: 'form-control' %>
+
+    <%= f.submit yield(:button_text), class: "btn btn-primary" %>
+<% end %>
