@@ -24,7 +24,7 @@ run commands in console
 ``` 
 bundle install
 rails db:migrate
-rails db:seed
+rake db:repopulate
 rails s
 ```
 Visit localhost:3000 in web browser for Rails page
