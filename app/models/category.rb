@@ -1,3 +1,4 @@
 class Category < ApplicationRecord
-  # scope by_name  order(:category_name)
+	has_many :products
+	validates :category_name, :presence => true
 end
