@@ -11,5 +11,13 @@ class User < ApplicationRecord
     uniqueness: { case_sensitive: false }
   has_secure_password
   validates :password, presence: true, length: { minimum: 6 }
+	has_many :products
+	has_many :products_votes
+	has_many :products, :through => :products_votes
+	has_many :favorites
+	has_many :products, :through => :favorites
+	has_many :orders
+	has_many :payment_types
+	has_one :wishlists
 
 end
