@@ -4,6 +4,14 @@
     <% @categories.each do |category| %>
     <li>
         <%= link_to category.category_name, category %>
+        
+    </li>
+    <% end %>
+
+    <% @products.each do |product| %>
+    <li>
+        <%= link_to product.product_name, product %>
+        
     </li>
     <% end %>
 </ul>
