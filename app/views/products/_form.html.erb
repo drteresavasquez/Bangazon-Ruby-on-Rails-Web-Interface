@@ -16,12 +16,9 @@
     <%= f.label :exp_date %>
     <%= f.date_select :exp_date, class: 'form-control' %>
 
-    <%= f.label :category_id %>
-    <%= f.collection_select :category_id, @categories, :category_name, include_blank: true %>
-
 
     <%= f.label :local %>
     <%= f.radio_button :local, class: 'form-control' %>
 
-    <%= f.submit yield(:button_text), class: "btn btn-primary" %>
+    <%= f.submit "Add Product", class: "btn btn-primary" %>
 <% end %>
