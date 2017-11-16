@@ -10,8 +10,7 @@ class CategoriesController < ApplicationController
         @category = Category.find(params[:id])
         @products = Product.all
     end
-
-
+    
     def sort_products
         @products_hash = {}
         @products.each do |product|
