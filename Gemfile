@@ -3,7 +3,6 @@ source 'https://rubygems.org'
 gem 'rails',                   '5.1.4'
 gem 'bootstrap-sass',          '3.3.7'
 gem 'bcrypt',                  '3.1.11'
-gem 'faker',                   '1.7.3'
 gem 'carrierwave',             '1.1.0'
 gem 'mini_magick',             '4.7.0'
 gem 'fog',                     '1.40.0'
@@ -28,6 +27,8 @@ group :development do
   gem 'listen',                '3.0.8'
   gem 'spring',                '2.0.2'
   gem 'spring-watcher-listen', '2.0.1'
+  gem 'faker'
+  gem 'seed_dump'
 end
 
 group :test do
