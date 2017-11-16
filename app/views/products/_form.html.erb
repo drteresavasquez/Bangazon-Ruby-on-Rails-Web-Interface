@@ -11,7 +11,7 @@
     <%= f.number_field :quantity, class: 'form-control' %>
 
     <%= f.label :price %>
-    <%= f.number_field :price, class: 'form-control' %>
+    <%= f.number_field :price, class: :text_field, step: :any %>
 
     <%= f.label :exp_date %>
     <%= f.date_select :exp_date, class: 'form-control' %>
@@ -20,5 +20,5 @@
     <%= f.label :local %>
     <%= f.radio_button :local, class: 'form-control' %>
 
-    <%= f.submit "Add Product", class: "btn btn-primary" %>
+    <%= f.submit "Sell a Product", class: "btn btn-primary" %>
 <% end %>
