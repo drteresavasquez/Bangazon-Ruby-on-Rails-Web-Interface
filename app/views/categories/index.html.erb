@@ -1,17 +1,24 @@
 <h1>All Categories</h1>
 
 <ul>
-    <% @categories.each do |category| %>
-    <li>
-        <%= link_to category.category_name, category %>
-        
-    </li>
+    <% @products_hash.each do |key, product| %>
+        <% @categories.each do |category| %>
+        <% if key == category.category_name %>
+        <li>
+        <%= link_to key, category %>
+        <%= "(#{product.length})" %> 
+            <ul>
+                <% product.take(3).each do |item| %>
+                    <% @products.each do |producting|%>
+                   <% if item[1] == producting.id%>
+                    <li><%= link_to item[0],  producting%></li>
+                <% end %>
+                <% end %>
+                <% end %>
+            </ul>
+        </li>
+        <% end %>
+        <% end %>
     <% end %>
 
-    <% @products.each do |product| %>
-    <li>
-        <%= link_to product.product_name, product %>
-        
-    </li>
-    <% end %>
 </ul>
