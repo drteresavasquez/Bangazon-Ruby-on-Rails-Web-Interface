@@ -1,42 +1,42 @@
 <header class="navbar navbar-fixed-top navbar-inverse">
   <div class="container">
-    <%= link_to "BANAGAZON", root_path, id: "logo" %>
-
-    <nav>
-      <ul class="nav navbar-nav navbar-right">
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-            Shop <b class="caret"></b>
-          </a>
-          <ul class="dropdown-menu">
-            <li>This will</li>
-            <li>show a list</li>
-            <li>of categories.</li>
-          </ul>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-            Sell <b class="caret"></b>
-          </a>
-          <ul class="dropdown-menu">
-            <li>My Products</li>
-            <li class="divider"></li>
-           <li> <%= link_to "Create Product", createproduct_path %></li>
-          </ul>
-        </li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-            Account <b class="caret"></b>
-          </a>
-          <ul class="dropdown-menu">
-            <li><%= link_to "My Products", myproducts_path %></li>
-            <li>Settings</li>
-            <li>Sign Out</li>
-            <li class="divider"></li>
-          </ul>
-        </li>
-        <li><%=	 link_to "Help", help_path %></li>
-
-      </ul>
-    </nav>
+    <%= link_to "BANGAZON", root_path, id: "logo" %>
+    <% if logged_in? %>
+      <nav>
+        <ul class="nav navbar-nav navbar-right">
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              Shop <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+              <li>This will</li>
+              <li>show a list</li>
+              <li>of categories.</li>
+            </ul>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              Sell <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+              <li>My Products</li>
+              <%= link_to "Sell It!", '/createproduct' %>
+              <li class="divider"></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              Account <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+                <li><%= link_to "My Products", myproducts_path %></li>
+              <li>Settings</li>
+              <%= link_to "Log out", logout_path, method: :delete %>
+              <li class="divider"></li>
+            </ul>
+          </li>
+          <li><%=	 link_to "Help", help_path %></li>
+        </ul>
+      </nav>
+    <% end %>
   </div>
 </header>
