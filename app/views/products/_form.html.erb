@@ -1,0 +1,24 @@
+<%= form_for(@product) do |f| %>
+    <%= render 'shared/error_messages', object: @product %>
+
+    <%= f.label :product_name %>
+    <%= f.text_field :product_name, class: 'form-control' %>
+
+    <%= f.label :description %>
+    <%= f.text_field :description, class: 'form-control' %>
+
+    <%= f.label :quantity %>
+    <%= f.number_field :quantity, class: 'form-control' %>
+
+    <%= f.label :price %>
+    <%= f.number_field :price, class: :text_field, step: :any %>
+
+    <%= f.label :exp_date %>
+    <%= f.date_select :exp_date, class: 'form-control' %>
+
+
+    <%= f.label :local %>
+    <%= f.check_box :local, class: 'form-control' %>
+
+    <%= f.submit "Sell a Product", class: "btn btn-primary" %>
+<% end %>

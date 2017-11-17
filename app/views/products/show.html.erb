@@ -1,7 +1,10 @@
+<% provide(:title, @product.product_name) %>
 <h1>Product:
     <%= @product.product_name %>
 </h1>
-
+<div class="row">
+    <aside class="col-md-4">
+      <section class="user_info">
 <p><%= @product.description %></p>
     <p>Units Available: <%= @product.quantity %>
     <br> Seller: <%= @seller.first_name%> <%= @seller.last_name%>
@@ -13,7 +16,13 @@
         Yes
         <% end %>
     </p>
-
+  </section>
+</aside>
+<div class="col-md-8">
     <button type="button" class="btn btn-primary">
-            <%= "Add to Order" %>
-    </button>
+        <%= "Add to Order" %>
+</button>
+</div>
+</div>
+    
+
