@@ -19,7 +19,6 @@
             </a>
             <ul class="dropdown-menu">
               <li>My Products</li>
-
               <%= link_to "Sell It!", '/createproduct' %>
               <li class="divider"></li>
             </ul>
@@ -29,7 +28,7 @@
               Account <b class="caret"></b>
             </a>
             <ul class="dropdown-menu">
-              <li>My Products</li>
+                <li><%= link_to "My Products", myproducts_path %></li>
               <li>Settings</li>
               <%= link_to "Log out", logout_path, method: :delete %>
               <li class="divider"></li>

@@ -1,0 +1,24 @@
+<h1>My Products</h1>
+
+
+<% unless @current_user_prods.empty? %>
+    <ul>
+        <% @current_user_prods.each do |prod|%>
+            <li><%= link_to prod.product_name, prod %><br>
+                <b>Current Inventory:</b> <%= prod.quantity %><br>
+                    <% @number_sold.each do |k, v|%>
+                        <% if prod.id == k %>
+                            <b>Number Sold:</b> <%= v %> 
+                            <% end %>
+                    <% end %>
+            </li>
+            <br>
+        <% end %>
+    </ul>
+    <% else %>
+        You don't have any products.
+        <br>
+
+        <%= link_to "Add Products", createproduct_path, class: "btn btn-primary" %>
+
+            <% end %>
