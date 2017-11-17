@@ -5,12 +5,11 @@ The Bangazon LTD Web Interface is created with emphasis on ERD Development, ERB 
 A user of this Web Interface can buy and sell items as well as interact with products on the site once authenticated.
 
 ## Software Versions
-```
+
 Rails 5.1.4
 mysql  Ver 14.14
 GEM: seed_dump https://github.com/rroblak/seed_dump
 GEM: faker https://github.com/stympy/faker
-```
 
 ## Get Started
 To get started, navigate to the directory of your choice and run the following code in the command line
