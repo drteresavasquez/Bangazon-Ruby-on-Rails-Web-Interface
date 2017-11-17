@@ -1,10 +1,9 @@
-
 class ProductsController < ApplicationController
-
-    def show
-        @product = Product.find(params[:id])
-        @seller = User.find(@product.seller_id)
-    end
+  include SessionsHelper
+  def show
+    @product = Product.find(params[:id])
+    @seller = User.find(current_user.id)
+  end
 
   def new
     @product = Product.new
@@ -25,9 +24,8 @@ class ProductsController < ApplicationController
 
   def product_params
     params.require(:product).permit(:product_name, :quantity, :description,
-                                 :price, :local, :category_id, :exp_date,
-                                  :active)
+                                    :price, :local, :category_id, :exp_date,
+                                    :active => true)
+
   end
-
 end
-
