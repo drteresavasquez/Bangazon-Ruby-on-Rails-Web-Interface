@@ -9,16 +9,17 @@ namespace :db do
     50.times do
       User.create!(
         first_name: Faker::Name.first_name,
+        password_digest: '$2a$10$u.koRs9qPBIxRaMSje1/.OO5y1K81R8j5FGURrIOqv5icu4oOQzK6',
         last_name: Faker::Name.last_name,
-        address: Faker::Address.street_address, 
-        city: Faker::Address.city, 
-        state: Faker::Address.state_abbr, 
-        zip: Faker::Address.zip_code, 
+        address: Faker::Address.street_address,
+        city: Faker::Address.city,
+        state: Faker::Address.state_abbr,
+        zip: Faker::Address.zip_code,
         phone: Faker::PhoneNumber.phone_number,
         email: Faker::Internet.email
       )
     end
-    
+
     Category.create!([
       {category_name: "Artwork"},
       {category_name: "Books"},
@@ -26,7 +27,7 @@ namespace :db do
       {category_name: "Clothing"},
       {category_name: "Other"}
     ])
-    
+
     50.times do
       Order.create!(
         user_id: Faker::Number.between(1, 50),

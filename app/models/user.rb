@@ -10,7 +10,7 @@ class User < ApplicationRecord
     format: { with: VALID_EMAIL_REGEX },
     uniqueness: { case_sensitive: false }
   has_secure_password
-  validates :password, presence: true, length: { minimum: 6 }
+  validates :password_digest, presence: true, length: { minimum: 6 }
 	has_many :products
 	has_many :products_votes
 	has_many :products, :through => :products_votes
