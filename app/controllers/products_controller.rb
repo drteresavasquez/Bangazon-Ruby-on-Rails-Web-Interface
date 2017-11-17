@@ -1,11 +1,13 @@
 class ProductsController < ApplicationController
+
+    def show
+        @product = Product.find(params[:id])
+        @seller = User.find(@product.seller_id)
+    end
+
   def new
     @product = Product.new
     @categories = Category.all
-  end
-
-  def show
-    @product = Product.find(params[:id])
   end
 
   def create
@@ -17,8 +19,6 @@ class ProductsController < ApplicationController
       render 'new'
     end
   end
-
-
 
   private
 

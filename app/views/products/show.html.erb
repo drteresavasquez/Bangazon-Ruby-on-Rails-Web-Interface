@@ -1,12 +1,28 @@
 <% provide(:title, @product.product_name) %>
+<h1>Product:
+    <%= @product.product_name %>
+</h1>
 <div class="row">
-  <aside class="col-md-4">
-    <section class="user_info">
-      <h1>
-        <%= @product.product_name %>
-        <%= @product.description %>
-        <%= @product.local %>
-      </h1>
-    </section>
-  </aside>
+    <aside class="col-md-4">
+      <section class="user_info">
+<p><%= @product.description %></p>
+    <p>Units Available: <%= @product.quantity %>
+    <br> Seller: <%= @seller.first_name%> <%= @seller.last_name%>
+    <br> Price: $<%= @product.price%>/item
+    <br> Local Delivery Available? 
+    <% unless @product.local %>
+        No
+        <% else %>
+        Yes
+        <% end %>
+    </p>
+  </section>
+</aside>
+<div class="col-md-8">
+    <button type="button" class="btn btn-primary">
+        <%= "Add to Order" %>
+</button>
 </div>
+</div>
+    
+
