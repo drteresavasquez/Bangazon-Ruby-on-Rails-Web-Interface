@@ -6,6 +6,7 @@ class UsersController < ApplicationController
 
         def show
           @user = User.find(params[:id])
+          @user_products = Product.where(seller_id: params[:id])
         end
       
         def new
