@@ -17,6 +17,7 @@ class ImagesController < ApplicationController
     end
   end
 
+
   private
 
   def image_params

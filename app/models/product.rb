@@ -19,7 +19,7 @@ class Product < ApplicationRecord
 	has_many :users, :through => :products_votes
 	# belongs_to :categories
 	has_many :wish_list_products
-  # mount_uploader :picture, PictureUploader
+  mount_uploader ImagesController.create, PictureUploader
 
   private
 

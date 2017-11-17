@@ -1,5 +1,5 @@
 <%= form_for(@product) do |f| %>
-    <%= render 'shared/error_messages', object: @product %>
+    <%= render 'shared/product_error_messages', object: @product %>
 
     <%= f.label :product_name %>
     <%= f.text_field :product_name, class: 'form-control' %>
