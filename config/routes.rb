@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   get  '/about',   to: 'static_pages#about'
   get  '/contact', to: 'static_pages#contact'
   get  '/createproduct',  to: 'products#new'
-
+  get   '/myproducts', to: 'products#index'
 
 
   resources :images
