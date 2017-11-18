@@ -6,7 +6,7 @@
                 <%= "#{@user.address}"%><br>
                 <%= "#{@user.city}, #{@user.state}"%><br>
                 <%= "#{@user.zip}"%></p>
-              <%= link_to "Edit Account", myproducts_path, class: "btn btn-info" %></p>
+              <%= link_to "Edit Account", edit_user_path(@user.id), class: "btn btn-info" %></p>
               <%= link_to "Order History", myproducts_path, class: "btn btn-success" %></p>
         </section>
       </aside>
