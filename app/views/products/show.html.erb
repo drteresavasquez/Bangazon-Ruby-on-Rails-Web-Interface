@@ -28,5 +28,10 @@
             <button type="button" class="btn btn-primary">
                 <%= "Add to Order" %>
             </button>
+        <% unless @seller.id != current_user.id%>
+            <button type="button" class="btn btn-danger">
+                    <%= "Delete Product" %>
+                </button>
+                <% end %>
         </div>
     </div>
