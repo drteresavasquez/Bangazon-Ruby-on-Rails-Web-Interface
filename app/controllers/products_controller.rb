@@ -3,7 +3,7 @@
       
     def show
           @product = Product.find(params[:id])
-          @seller = User.find(current_user.id)
+          @seller = User.find(@product.seller_id)
     end
 
         # Show user products
