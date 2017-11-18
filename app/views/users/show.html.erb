@@ -6,14 +6,46 @@
                 <%= "#{@user.address}"%><br>
                 <%= "#{@user.city}, #{@user.state}"%><br>
                 <%= "#{@user.zip}"%></p>
+              <%= link_to "Edit Account", myproducts_path, class: "btn btn-info" %></p>
+              <%= link_to "Order History", myproducts_path, class: "btn btn-success" %></p>
         </section>
       </aside>
 
       <div class="col-md-7">
-            <% @user_products.each do |product| %>
-            <ul>
-                <li><%= link_to product.product_name, product%></li>
-            </ul>
-            <% end %>
+        <div class="payment_type">
+        <% unless @payment_types.empty? %>
+
+          <% @payment_types.each do |payment|%>
+          <p><%= "#{payment.account_name} (Expires: #{payment.exp_date})" %> <%= link_to "delete", payment, method: :delete, 
+            data: { confirm: 'Are you sure?'}%></p>
+                  <% end %>
+         
+                  <p><%= link_to "Add New Payment", newpayment_path, class: "btn btn-warning" %></p>
+        <% else %>
+            <p>You don't have any payment types.</p>
+            <p><%= link_to "Add New Payment", newpayment_path, class: "btn btn-warning" %></p>
+            
+            <!-- <button onclick="document.getElementById('id01').style.display='block'" class="btn btn-warning">Add New Payment</button> -->
+                <% end %>
+        </div>
+<hr>
+        <div class="see_all_prods"> 
+            <% unless @user_products.empty? %>
+            <h3>Your Top Selling Items</h3>
+            <p><% @user_products.take(3).each do |prod|%>
+                  <%= link_to prod.product_name, prod %><br>
+                <% end %>
+              </p>
+            <p><%= link_to "View All Products", myproducts_path, class: "btn btn-primary" %></p>
+            <% else %>
+            <h3>Uh oh!</h3>
+                You don't have any products.
+                <%= link_to "Add Products", createproduct_path, class: "btn btn-primary" %>
+        
+                    <% end %>
+       
       </div>
     </div>
+
+    
+    

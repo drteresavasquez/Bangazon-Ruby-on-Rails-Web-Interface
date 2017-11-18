@@ -3,7 +3,7 @@
   <head>
     <title><%= full_title(yield(:title)) %></title>
     <%= csrf_meta_tags %>
-
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= render 'layouts/shim' %>
@@ -14,6 +14,7 @@
       <% flash.each do |message_type, message| %>
         <div class="alert alert-<%= message_type %>"><%= message %></div>
       <% end %>
+      
       <%= yield %>
       <!--<%= render 'layouts/footer' %>-->
       <%= debug(params) if Rails.env.development? %>
