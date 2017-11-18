@@ -8,7 +8,7 @@ class CreateProducts < ActiveRecord::Migration[5.1]
       t.datetime :exp_date
       t.text :description
       t.integer :quantity
-      t.boolean :active
+      t.boolean :active, default: true
       t.string :product_name
 
       t.timestamps
