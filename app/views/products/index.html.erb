@@ -4,7 +4,9 @@
 <% unless @current_user_prods.empty? %>
     <ul>
         <% @current_user_prods.each do |prod|%>
-            <li><%= link_to prod.product_name, prod %><br>
+            <li><%= link_to prod.product_name, prod %> 
+            <%= link_to "delete", prod, class: "btn btn-danger", method: :delete, 
+                data: { confirm: "Are you sure you want to delete #{prod.product_name}?"}%></p>
                 <b>Current Inventory:</b> <%= prod.quantity %><br>
                     <% @number_sold.each do |k, v|%>
                         <% if prod.id == k %>

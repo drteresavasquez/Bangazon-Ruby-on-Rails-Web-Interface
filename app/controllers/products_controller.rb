@@ -29,6 +29,13 @@
         render 'new'
       end
     end
+
+    def destroy
+      @product = Product.find(params[:id])
+      @product.destroy
+
+      redirect_to myproducts_path
+    end
   
     private
   
