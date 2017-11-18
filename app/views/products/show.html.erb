@@ -29,9 +29,9 @@
                 <%= "Add to Order" %>
             </button>
         <% unless @seller.id != current_user.id%>
-            <button type="button" class="btn btn-danger">
-                    <%= "Delete Product" %>
-                </button>
+                <%= link_to "delete", @product, class: "btn btn-danger", method: :delete, 
+                data: { confirm: "Are you sure you want to delete #{@product.product_name}?"}%></p>
                 <% end %>
+          
         </div>
     </div>
