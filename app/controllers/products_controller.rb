@@ -6,6 +6,7 @@ class ProductsController < ApplicationController
     @seller = User.find(current_user.id)
   end
 
+
         # Show user products
   def index
     @current_user_prods = Product.where(seller_id: current_user.id)
@@ -30,7 +31,15 @@ class ProductsController < ApplicationController
     end
   end
 
-  private
+  def destroy
+      @product = Product.find(params[:id])
+      @product.destroy
+
+      redirect_to myproducts_path
+  end
+  
+
+    private
 
   def product_params
     params.require(:product).permit(:product_name, :quantity, :description,
