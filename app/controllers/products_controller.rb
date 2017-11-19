@@ -3,7 +3,7 @@
       
     def show
           @product = Product.find(params[:id])
-          @seller = User.find(current_user.id)
+          @seller = User.find(@product.seller_id)
     end
 
         # Show user products
@@ -28,6 +28,13 @@
         @categories = Category.all
         render 'new'
       end
+    end
+
+    def destroy
+      @product = Product.find(params[:id])
+      @product.destroy
+
+      redirect_to myproducts_path
     end
   
     private

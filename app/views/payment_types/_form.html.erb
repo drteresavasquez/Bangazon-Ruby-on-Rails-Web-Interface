@@ -1,0 +1,16 @@
+<%= form_for(@payment_type) do |f| %>
+<%= render 'shared/error_messages', object: @payment_type %>
+
+<%= f.hidden_field :user_id, :value => current_user.id %>
+
+<%= f.label :account_name %>
+<%= f.text_field :account_name, class: 'form-control' %>
+
+<%= f.label :account_number %>
+<%= f.text_field :account_number, class: 'form-control' %>
+
+<%= f.label :exp_date %>
+<%= f.date_select :exp_date, class: 'form-control' %>
+
+<%= f.submit "Add Payment Type", class: "btn btn-primary" %>
+<% end %>

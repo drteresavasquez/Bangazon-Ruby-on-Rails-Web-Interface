@@ -9,11 +9,13 @@ Rails.application.routes.draw do
   get   '/myproducts', to: 'products#index'
 
   get    '/signup',  to: 'users#new'
+  get    '/profile',  to: 'users#show'
 
   get    '/login',   to: 'sessions#new'
   post   '/login',   to: 'sessions#create'
   delete '/logout',  to: 'sessions#destroy'
 
+  get '/newpayment', to: 'payment_types#new'
 
   resources :images
   resources :wish_lists

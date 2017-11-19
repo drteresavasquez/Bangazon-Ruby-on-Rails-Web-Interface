@@ -1,11 +1,14 @@
 class UsersController < ApplicationController
+    include SessionsHelper
         def index
             @users = User.all
         end
 
         def show
-          @user = User.find(params[:id])
-          @user_products = Product.where(seller_id: params[:id])
+          @user = User.find(current_user.id)
+          @user_products = Product.where(seller_id: current_user.id)
+          @payment_types = PaymentType.where(user_id: current_user.id)
+          @number_sold = OrdersProduct.where(:product_id => @user_products.ids).group(:product_id).count
         end
       
         def new
@@ -21,6 +24,19 @@ class UsersController < ApplicationController
             render 'new'
           end
         end
+
+      def edit
+          @user = User.find(params[:id])
+      end
+
+      def update
+        @user = User.find(params[:id])
+        if @user.update(user_params)
+            redirect_to profile_path
+        else
+            render 'edit'
+        end
+    end
       
         private
           def user_params
