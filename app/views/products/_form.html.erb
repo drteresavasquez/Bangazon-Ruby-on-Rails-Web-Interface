@@ -1,5 +1,4 @@
 <%= form_for(@product) do |f| %>
-    <%= render 'shared/product_error_messages', object: @product %>
 
     <%= f.hidden_field :seller_id, :value => current_user.id %>
     <%= f.hidden_field :active, :value => true %>
