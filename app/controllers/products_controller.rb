@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 class ProductsController < ApplicationController
   include SessionsHelper
 
@@ -36,7 +35,7 @@ class ProductsController < ApplicationController
   def product_params
     params.require(:product).permit(:product_name, :quantity, :description,
                                  :price, :local, :category_id, :exp_date,
-                                  :active, :seller_id)
+                                  :active, :seller_id, :picture)
 
   end
 end

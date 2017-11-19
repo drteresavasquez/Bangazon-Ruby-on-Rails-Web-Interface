@@ -21,7 +21,7 @@
                                         <% else %>
                                             Yes
                                             <% end %>
-                  <%= image_tag Image.picture.url unless product.picture? %>
+                  <%= image_tag @product.picture.url if @product.picture? %>
 
                 </p>
             </section>
