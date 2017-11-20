@@ -8,7 +8,7 @@ class ProductsController < ApplicationController
 
   # @build   takes id->city of current user, searches products from users from same city
   # @params  none
-  # @return  creates array of products matching SQL query
+  # @return  no return, creates array of products matching SQL query
   def show_local
     current_city = current_user[:city].titleize
     local_sellers = Array.new
@@ -54,12 +54,13 @@ class ProductsController < ApplicationController
   end
 
 
-    private
+  private
 
-  def product_params
-    params.require(:product).permit(:product_name, :quantity, :description,
-                                 :price, :local, :category_id, :exp_date,
-                                  :active, :seller_id, :picture)
+    def product_params
+      params.require(:product).permit(:product_name, :quantity, :description,
+                                   :price, :local, :category_id, :exp_date,
+                                    :active, :seller_id, :picture)
 
-  end
+    end
+
 end
