@@ -3,7 +3,12 @@ class PaymentTypesController < ApplicationController
 
     def new
         @payment_type = PaymentType.new
+        @payment_types = PaymentType.all.map {|c| c.account_name}.uniq!
+
     end
+
+
+
     
     def create
         @payment_type = PaymentType.new(payment_type_params)
@@ -11,6 +16,7 @@ class PaymentTypesController < ApplicationController
           flash[:success] = "New Payment was created!"
           redirect_to profile_path
         else
+          @payment_types = PaymentType.all.map {|c| c.account_name}.uniq!
           render 'new'
         end
     end

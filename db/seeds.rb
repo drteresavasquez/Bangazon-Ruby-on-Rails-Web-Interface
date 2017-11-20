@@ -124,7 +124,7 @@ account_names = [
 100.times do |num|
   user_id = num
   account_name = account_names.sample
-  account_number = rand(111..999)
+  account_number = rand(1111111111111111..9999999999999999).to_s
   exp_date = Faker::Date.forward(365)
   PaymentType.create!(
       user_id: user_id,
