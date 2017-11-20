@@ -1,1 +1,13 @@
-<h1>Show the local shit.</h1>
+<h1>The following products are available for local delivery</h1>
+
+<% @local_products.each_slice(3) do |products| %>
+  <div class="row">
+    <% products.each do |product| %>
+      <% product.each do |item| %>
+        <div class="col-md-4">
+          <%= item.product_name %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+<% end %>

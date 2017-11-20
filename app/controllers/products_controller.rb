@@ -16,6 +16,7 @@ class ProductsController < ApplicationController
     User.where(:city => current_city).find_each do |user, index|
       local_sellers.push(user.id)
     end
+
     local_sellers.each do |id|
       @local_products.push(Product.where("seller_id = ? AND local = ?", id, true))
     end
