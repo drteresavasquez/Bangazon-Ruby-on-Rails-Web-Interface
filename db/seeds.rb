@@ -89,3 +89,35 @@ end
       active: active
     )
 end
+
+# create 1000 orders-products
+1000.times do
+  order_id = rand(1..500)
+  product_id = rand(1..500)
+  product_rating = rand(1..5)
+  OrdersProduct.create!(
+      order_id: order_id,
+      product_id: product_id,
+      product_rating: product_rating
+    )
+end
+
+# create 500 wishlists
+500.times do
+  user_id = rand(1..100)
+  wishlist_name = Faker::Lorem.words(2)
+  WishList.create!(
+      user_id: user_id,
+      wishlist_name: wishlist_name
+    )
+end
+
+# create 1000 wishlist-products
+1000.times do
+  wishlist_id = rand(1..500)
+  product_id = rand(1..500)
+  OrdersProduct.create!(
+      order_id: order_id,
+      product_id: product_id
+    )
+end
