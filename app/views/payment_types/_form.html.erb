@@ -3,14 +3,13 @@
 
 <%= f.hidden_field :user_id, :value => current_user.id %>
 
-<%= f.label :payment_type %>
-<%= f.select(:id) do %>
-    <%=	 content_tag(:option, "Choose an Account Type", value: "") %>
-    <% @payment_types.each do |c| -%>
+    <%= f.label :account_name %>
+  <%= f.select(:account_name) do %>
+      <%=	 content_tag(:option, "Choose an Account Type", value: "") %>
+      <% @payment_types.each do |c| %>
       <%= content_tag(:option, c) %>
-    <%  end %>
-<%	end %>
-
+      <% end %>
+  <% end %>
 
 <%= f.label :account_number %>
 <%= f.text_field :account_number, class: 'form-control' %>
