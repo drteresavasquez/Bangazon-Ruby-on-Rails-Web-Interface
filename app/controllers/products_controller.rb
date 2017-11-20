@@ -6,11 +6,11 @@ class ProductsController < ApplicationController
     @seller = User.find(current_user.id)
   end
 
-  # @build  takes id->city of current user, searches products from users from same city
-  # @params none
-  # @return array of products matching SQL query
+  # @build   takes id->city of current user, searches products from users from same city
+  # @params  none
+  # @return  creates array of products matching SQL query
   def show_local
-    current_city = current_user[:city]
+    current_city = current_user[:city].titleize
     local_sellers = Array.new
     @local_products = Array.new
     User.where(:city => current_city).find_each do |user, index|
