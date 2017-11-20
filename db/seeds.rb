@@ -116,8 +116,8 @@ end
 1000.times do
   wishlist_id = rand(1..500)
   product_id = rand(1..500)
-  OrdersProduct.create!(
-      order_id: order_id,
+  WishListProduct.create!(
+      wishlist_id: wishlist_id,
       product_id: product_id
     )
 end
