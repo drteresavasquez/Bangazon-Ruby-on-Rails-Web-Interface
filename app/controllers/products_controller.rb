@@ -6,6 +6,17 @@ class ProductsController < ApplicationController
     @seller = User.find(current_user.id)
   end
 
+  def show_local
+    @current_city = current_user[:city]
+    @local_sellers = Array.new
+    User.where(city: @current_city).find_each do |user, index|
+      @local_sellers.push(user.id)
+    end
+    puts @local_sellers
+  end
+
+
+
 
         # Show user products
   def index
@@ -37,7 +48,7 @@ class ProductsController < ApplicationController
 
       redirect_to myproducts_path
   end
-  
+
 
     private
 

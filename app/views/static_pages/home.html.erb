@@ -4,8 +4,9 @@
   <h2>
     This is the wonderful world of Bangazon
   </h2>
+  <% if !logged_in? %>
+    <%= link_to "Sign up now!", 'signup', class: "btn btn-lg btn-primary" %>
 
-  <%= link_to "Sign up now!", 'signup', class: "btn btn-lg btn-primary" %>
-
-  <%= link_to "Log In", '/login', class: "btn btn-lg btn-primary" %>
+    <%= link_to "Log In", '/login', class: "btn btn-lg btn-primary" %>
+  <% end %>
 </div>
