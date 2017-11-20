@@ -26,17 +26,33 @@
 end
 
 # create 10 categories
-
-category_names = Array.new
-
 10.times do |num|
   category_name = Faker::Commerce.department
   Category.create!(
       category_name: category_name
     )
-
-  category_names.push(category_name)
-
 end
 
-puts category_names
+# create 500 products
+500.times do |num|
+  seller_id = rand(1..100)
+  price = Faker::Commerce.price
+  local = random_boolean = [true, false].sample
+  category_id = rand(1..10)
+  exp_date = Faker::Date.forward(50)
+  description = Faker::Lorem.sentence
+  quantity = rand(1..50)
+  active = random_boolean = [true, false].sample
+  product_name = Faker::Commerce.product_name
+  Product.create!(
+      seller_id: seller_id,
+      price: price,
+      local: local,
+      category_id: category_id,
+      exp_date: exp_date,
+      description: description,
+      quantity: quantity,
+      active: active,
+      product_name: product_name
+    )
+end
