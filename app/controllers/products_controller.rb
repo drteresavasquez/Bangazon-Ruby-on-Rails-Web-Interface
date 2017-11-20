@@ -6,19 +6,22 @@ class ProductsController < ApplicationController
     @seller = User.find(current_user.id)
   end
 
+  # @build  takes id->city of current user, searches products from users from same city
+  # @params none
+  # @return array of products matching SQL query
   def show_local
-    @current_city = current_user[:city]
-    @local_sellers = Array.new
-    User.where(city: @current_city).find_each do |user, index|
-      @local_sellers.push(user.id)
+    current_city = current_user[:city]
+    local_sellers = Array.new
+    @local_products = Array.new
+    User.where(:city => current_city).find_each do |user, index|
+      local_sellers.push(user.id)
     end
-    puts @local_sellers
+    local_sellers.each do |id|
+      @local_products.push(Product.where("seller_id = ? AND local = ?", id, true))
+    end
   end
 
-
-
-
-        # Show user products
+   # Show user products
   def index
     @current_user_prods = Product.where(seller_id: current_user.id)
 

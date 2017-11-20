@@ -1,6 +1,6 @@
 
-# create 100 users
-100.times do |num|
+# create 100 random users
+100.times do
     first_name = Faker::Name.unique.first_name
     last_name  = Faker::Name.unique.first_name
     address = Faker::Address.street_address
@@ -25,6 +25,34 @@
       )
 end
 
+# create 10 users from Hill, TN
+# This is used to test local product search
+10.times do |num|
+  first_name = "FirstName#{num}"
+  last_name = "LastName#{num}"
+  address = '123 Main'
+  city = 'Hill'
+  state = 'TN'
+  zip = '33333'
+  phone = '555-1212'
+  email = "email#{num}@example.com"
+  password = '123456'
+
+  User.create!(
+        first_name: first_name,
+        last_name: last_name,
+        address: address,
+        city: city,
+        state: state,
+        zip: zip,
+        phone: phone,
+        email: email,
+        password: password,
+        password_confirmation: password
+      )
+end
+
+
 # create 10 categories
 10.times do |num|
   category_name = Faker::Commerce.department
@@ -34,7 +62,7 @@ end
 end
 
 # create 500 products
-500.times do |num|
+500.times do
   seller_id = rand(1..100)
   price = Faker::Commerce.price
   local = random_boolean = [true, false].sample
@@ -43,6 +71,31 @@ end
   description = Faker::Lorem.sentence
   quantity = rand(1..50)
   active = random_boolean = [true, false].sample
+  product_name = Faker::Commerce.product_name
+  Product.create!(
+      seller_id: seller_id,
+      price: price,
+      local: local,
+      category_id: category_id,
+      exp_date: exp_date,
+      description: description,
+      quantity: quantity,
+      active: active,
+      product_name: product_name
+    )
+end
+
+# create 10 products from sellers from Hill, TN
+# This is used to test local product search
+10.times do |num|
+  seller_id = num + 100
+  price = Faker::Commerce.price
+  local = true
+  category_id = rand(1..10)
+  exp_date = Faker::Date.forward(50)
+  description = Faker::Lorem.sentence
+  quantity = rand(1..50)
+  active = random_boolean = true
   product_name = Faker::Commerce.product_name
   Product.create!(
       seller_id: seller_id,
