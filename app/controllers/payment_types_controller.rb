@@ -3,8 +3,12 @@ class PaymentTypesController < ApplicationController
 
     def new
         @payment_type = PaymentType.new
+        @payment_types = PaymentType.all
 
-    end
+        end
+
+
+
     
     def create
         @payment_type = PaymentType.new(payment_type_params)
