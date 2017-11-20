@@ -7,7 +7,7 @@
         <div class="col-md-4 product-cards">
           <h3><%= item.product_name %></h3>
           <p><%=item.description %></p>
-          <%= image_tag @product.picture.url if @product.picture? %>
+          <%= image_tag item.picture.url if item.picture? %>
           <p><strong>Price: </strong><%= item.price %></p>
           <button type="button" class="btn btn-primary">
             <%= "Add to Order" %>
