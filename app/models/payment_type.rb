@@ -5,7 +5,7 @@ class PaymentType < ApplicationRecord
 
     validates :user_id, :account_name, :exp_date,:presence => true
     validates :account_number, presence: true,
-              length: { maximum: 16 },
+              length: { must_equal: 16 },
               format: { with: VALID_CC_REGEX },
               uniqueness: true
     validate :exp_date_after_now?
