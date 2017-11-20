@@ -59,14 +59,18 @@ end
 
 # create 100 payment types
 #select from 10 account names
-account_names = Array.new
-10.times do
-  account_names.push(Faker::Bank.name)
-end
+account_names = [
+  'Visa',
+  'Mastercard',
+  'American Express',
+  'Diners Club',
+  'Discover',
+  'Pay Pal'
+]
 
 100.times do |num|
   user_id = num
-  account_name = account_names.select
+  account_name = account_names.sample
   account_number = rand(111..999)
   exp_date = Faker::Date.forward(365)
   PaymentType.create!(
