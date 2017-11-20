@@ -3,9 +3,9 @@ class PaymentTypesController < ApplicationController
 
     def new
         @payment_type = PaymentType.new
-        @payment_types = PaymentType.all
+        @payment_types = PaymentType.all.map {|c| c.account_name}.uniq!
 
-        end
+    end
 
 
 
