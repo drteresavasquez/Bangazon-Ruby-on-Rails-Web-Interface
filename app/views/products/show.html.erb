@@ -1,3 +1,4 @@
+
 <% provide(:title, @product.product_name) %>
     <h1>Product:
         <%= @product.product_name %>
@@ -31,9 +32,9 @@
                 <%= "Add to Order" %>
             </button>
         <% unless @seller.id != current_user.id%>
-                <%= link_to "Delete", @product, class: "btn btn-danger", method: :delete, 
+                <%= link_to "Delete", @product, class: "btn btn-danger", method: :delete,
                 data: { confirm: "Are you sure you want to delete #{@product.product_name}?"}%></p>
                 <% end %>
-          
+
         </div>
     </div>

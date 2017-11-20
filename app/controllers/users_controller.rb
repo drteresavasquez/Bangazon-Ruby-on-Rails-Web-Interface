@@ -10,16 +10,17 @@ class UsersController < ApplicationController
           @payment_types = PaymentType.where(user_id: current_user.id)
           @number_sold = OrdersProduct.where(:product_id => @user_products.ids).group(:product_id).count
         end
-      
+
         def new
           @user = User.new
         end
-      
+
         def create
           @user = User.new(user_params)
           if @user.save
             flash[:success] = "You're all signed up!"
-            redirect_to @user
+            log_in(@user)
+            redirect_to root_url
           else
             render 'new'
           end
@@ -37,7 +38,7 @@ class UsersController < ApplicationController
             render 'edit'
         end
     end
-      
+
         private
           def user_params
             params.require(:user).permit(
