@@ -1,6 +1,7 @@
 class User < ApplicationRecord
 
   before_save { self.email = email.downcase }
+  before_save { self.city = city.titleize }
 
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   validates :first_name, presence: true, length: { maximum: 50 }
@@ -11,6 +12,7 @@ class User < ApplicationRecord
     uniqueness: { case_sensitive: false }
   has_secure_password
   validates :password_digest, presence: true, length: { minimum: 6 }
+
 	has_many :products
 	has_many :products_votes
 	has_many :products, :through => :products_votes

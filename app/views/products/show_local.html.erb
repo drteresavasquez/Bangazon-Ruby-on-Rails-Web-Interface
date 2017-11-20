@@ -1,0 +1,19 @@
+<h1>The following products are available for local delivery</h1>
+
+<% @local_products.each_slice(3) do |products| %>
+  <div class="row">
+    <% products.each do |product| %>
+      <% product.each do |item| %>
+        <div class="col-md-4 product-cards">
+          <h3><%= item.product_name %></h3>
+          <p><%=item.description %></p>
+          <%= image_tag item.picture.url if item.picture? %>
+          <p><strong>Price: </strong><%= item.price %></p>
+          <button type="button" class="btn btn-primary">
+            <%= "Add to Order" %>
+          </button>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+<% end %>

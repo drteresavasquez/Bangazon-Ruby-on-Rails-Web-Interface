@@ -17,6 +17,8 @@ Rails.application.routes.draw do
 
   get '/newpayment', to: 'payment_types#new'
 
+  get '/local', to: 'products#show_local'
+
   resources :images
   resources :wish_lists
   resources :orders
