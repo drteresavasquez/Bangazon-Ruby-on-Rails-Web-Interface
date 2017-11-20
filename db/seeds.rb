@@ -76,3 +76,16 @@ end
       exp_date: exp_date
     )
 end
+
+# create 500 orders
+500.times do
+  user_id = rand(1..100)
+  payment_type_id = rand(1..100)
+  active = true
+
+  Order.create!(
+      user_id: user_id,
+      payment_type_id: payment_type_id,
+      active: active
+    )
+end
