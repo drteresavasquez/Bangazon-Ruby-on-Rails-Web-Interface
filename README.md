@@ -28,6 +28,7 @@ $ cd Bangazon-Ruby-on-Rails-Web-Interface
 Run the following commands in the terminal:
 ```
 $ brew install imagemagick
+```
 ``` 
 $ bundle install --without production
 ```
