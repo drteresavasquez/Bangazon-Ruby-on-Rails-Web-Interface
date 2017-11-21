@@ -26,6 +26,8 @@ $ cd Bangazon-Ruby-on-Rails-Web-Interface
 ## Initialize App
 
 Run the following commands in the terminal:
+```
+$ brew install imagemagick
 ``` 
 $ bundle install --without production
 ```
@@ -51,7 +53,7 @@ Visit http://localhost:3000 in your web browser for the Bangazon page.
  * On login, the menu option and success message will also appear.
  
 2. User log out
- * When the user clicks ACCOUNT > Log OUT in the navbar, the user is logged out and returned to the home page. The menu options are hidden.
+ * When the user clicks ACCOUNT > LOG OUT in the navbar, the user is logged out and returned to the home page. The menu options are hidden.
  
 3. Shopping
 * When the user clicks SHOP in the navbar, the user has the option to SEE PRODUCT CATEGORIES and FIND LOCAL ITEMS.
