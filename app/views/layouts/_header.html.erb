@@ -9,6 +9,7 @@
               Shop <b class="caret"></b>
             </a>
             <ul class="dropdown-menu">
+              <li><%=	 link_to "Product Categories", '/categories' %></li>
               <li><%= link_to 'Find Local Items', '/local'%></li>
             </ul>
           <li class="dropdown">
@@ -29,13 +30,12 @@
             <ul class="dropdown-menu">
                 <li><%= link_to "My Profile", profile_path %></li>
                 <li class="divider"></li>
-                <li><%= link_to "Settings" %></li>
+                <li><%= link_to "Settings", "users/#{current_user.id}/edit" %></li>
                 <li class="divider"></li>
               <li><%= link_to "Log out", logout_path, method: :delete %></li>
             </ul>
           </li>
-          <li><%=	 link_to "Help", help_path %></li>
-          <li><%=	 link_to "Product Categories", '/categories' %></li>
+          <li><%=	link_to "Welcome, #{current_user.first_name}!", profile_path %></li>
         </ul>
       </nav>
     <% end %>

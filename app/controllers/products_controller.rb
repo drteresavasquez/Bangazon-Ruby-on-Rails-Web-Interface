@@ -3,7 +3,7 @@ class ProductsController < ApplicationController
 
   def show
     @product = Product.find(params[:id])
-    @seller = User.find(current_user.id)
+    @seller = User.find(@product.seller_id)
   end
 
   # @build   takes id->city of current user, searches products from users from same city
