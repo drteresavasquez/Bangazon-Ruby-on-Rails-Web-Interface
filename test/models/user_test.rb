@@ -6,6 +6,7 @@ class UserTest < ActiveSupport::TestCase
       first_name: 'Jeremy',
       last_name: 'Wells',
       email: "user@example.com",
+      city: "Hill",
       password: '123456',
       password_confirmation: '123456'
       )
@@ -69,12 +70,12 @@ class UserTest < ActiveSupport::TestCase
   end
 
   test "password should be present (nonblank)" do
-    @user.password = @user.password_confirmation = " " * 6
+    @user.password = @user.password_confirmation = " " * 7
     assert_not @user.valid?
   end
 
   test "password should have a minimum length" do
-    @user.password = @user.password_confirmation = "a" * 5
+    @user.password = @user.password_confirmation = "a" * 3
     assert_not @user.valid?
   end
 

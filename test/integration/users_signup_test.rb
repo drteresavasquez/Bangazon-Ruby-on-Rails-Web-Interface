@@ -8,6 +8,7 @@ class UsersSignupTest < ActionDispatch::IntegrationTest
       post users_path, params: { user: { first_name:  "Test",
                                           last_name: "User",
                                          email: "user@example.com",
+                                         city: "Hill",
                                          password:              "password",
                                          password_confirmation: "password" } }
     end
