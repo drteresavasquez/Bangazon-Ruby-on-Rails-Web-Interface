@@ -55,7 +55,7 @@ end
 
 # create 10 categories
 10.times do |num|
-  category_name = Faker::Commerce.department
+  category_name = Faker::Commerce.unique.department
   Category.create!(
       category_name: category_name
     )
