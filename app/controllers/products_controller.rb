@@ -30,11 +30,17 @@ class ProductsController < ApplicationController
     @number_sold = OrdersProduct.where(:product_id => @current_user_prods.ids).group(:product_id).count
   end
 
+  # @build  instantiates Product object, creates collection of all categories
+  # @params
+  # @return
   def new
     @product = Product.new
     @categories = Category.all
   end
 
+  # @build  creates a new product
+  # @params  product params from product#new field
+  # @return  redirects to product_path
   def create
     @product = Product.new(product_params)
     if @product.save
@@ -46,6 +52,9 @@ class ProductsController < ApplicationController
     end
   end
 
+  # @build  deletes a product from the database
+  # @params  id of product to delete
+  # @return  redirects to myproducts_path
   def destroy
       @product = Product.find(params[:id])
       @product.destroy
@@ -55,7 +64,9 @@ class ProductsController < ApplicationController
 
 
   private
-
+    # @build  makes product fields editable by user
+    # @params
+    # @return  params
     def product_params
       params.require(:product).permit(:product_name, :quantity, :description,
                                    :price, :local, :category_id, :exp_date,
