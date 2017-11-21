@@ -1,32 +1,32 @@
 
 <% provide(:title, @product.product_name) %>
-    <h1>Product:
+    <h1>
         <%= @product.product_name %>
     </h1>
     <div class="row">
         <aside class="col-md-4">
             <section class="user_info">
-                <p>
-                    <%= @product.description %>
-                </p>
-                <p>Units Available:
+                <p><b>Description:</b>
+                    <%=  @product.description %> <br>
+                <b>Units Available:</b>
                     <%= @product.quantity %>
-                        <br> Seller:
+                        <br> <b>Seller:</b>
                         <%= @seller.first_name%>
                             <%= @seller.last_name%>
-                                <br> Price: $
-                                <%= @product.price%>/item
-                                    <br> Local Delivery Available?
+                                <br> <b>Price:</b>
+                                <%= "$#{@product.price}" %>/item
+                                    <br> <b>Local Delivery Available?</b>
                                     <% unless @product.local %>
                                         No
                                         <% else %>
                                             Yes
-                                            <% end %>
+                                            <% end %> <br> <br>
                   <%= image_tag @product.picture.url if @product.picture? %>
 
                 </p>
             </section>
         </aside>
+      <br>
         <div class="col-md-8">
             <button type="button" class="btn btn-primary">
                 <%= "Add to Order" %>
