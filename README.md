@@ -48,6 +48,13 @@ rails server
 ```
 Visit http://localhost:3000 in your web browser for the Bangazon page.
 
+## Unit and Integration Tests
+User signup and login methods have test coverage. To run tests
+
+```
+rails test
+```
+
 ## Testing the App Functionality
 1. User Signup and Login
  * On the Bangazon home page, click the Signup button.
