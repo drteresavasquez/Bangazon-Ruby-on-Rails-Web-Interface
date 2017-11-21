@@ -1,6 +1,5 @@
 module SessionsHelper
 
-
   # @build  returns session id with user id
   # @params  hash from current user
   # @return  returns user id
