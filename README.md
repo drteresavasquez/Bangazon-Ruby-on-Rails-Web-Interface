@@ -10,7 +10,7 @@ Ruby 2.4.2
 
 Rails 5.1.4
 
-mysql  Ver 14.14
+MySQL 14.14
 
 ## Get Started
 To get started, navigate to the directory of your choice and run the following commands in the terminal.
