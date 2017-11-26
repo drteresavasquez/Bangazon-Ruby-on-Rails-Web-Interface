@@ -57,10 +57,10 @@ rails test
 
 ## Testing the App Functionality
 1. User Signup and Login
- * On the Bangazon home page, click the Signup button.
- * The user should be taken to a form for entering user information and a password.
- * On submit, the user will be returned to the home page. Menu option will appear in the navbar and a success message will appear.
- * On login, the menu option and success message will also appear.
+* On the Bangazon home page, click the Signup button.
+* The user should be taken to a form for entering user information and a password.
+* On submit, the user will be returned to the home page. Menu option will appear in the navbar and a success message will appear.
+* On login, the menu option and success message will also appear.
  
 2. User log out
  * When the user clicks ACCOUNT > LOG OUT in the navbar, the user is logged out and returned to the home page. The menu options are hidden.
@@ -95,7 +95,5 @@ Create an [issue report](https://github.com/Holyhead-Harpies/Bangazon-Ruby-on-Ra
 
 ## Meet the Dev Team
 - [Bryon Larrance](https://github.com/beelarr)
-- [Jeremy Wells](https://github.com/jsheridanwells)
-- [Fang-Wen Shen](https://github.com/fang-w-shen)
-- [Ted Pennington](https://github.com/tedpennington)
 - [Dr. Teresa Vasquez](https://github.com/drteresavasquez)
+- [Jeremy Wells](https://github.com/jsheridanwells)
